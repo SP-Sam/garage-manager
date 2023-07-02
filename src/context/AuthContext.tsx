@@ -106,7 +106,11 @@ const AuthProvider = ({ children }: Props) => {
       router.replace('/auth/login');
     } catch (e: any) {
       if (errorCallback) {
-        errorCallback(e.response.data.status);
+        if (e.response.data.error === 'E-mail already registered') {
+          errorCallback(1);
+        } else {
+          errorCallback(2);
+        }
       }
     } finally {
       setIsLoading(false);

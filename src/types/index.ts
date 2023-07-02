@@ -10,7 +10,7 @@ export type RegisterFormTypes = {
 
 export type LoginErrorCallbackTypes = (statusCode: 404 | 401) => void;
 
-export type RegisterErrorCallbackTypes = (statusCode: 409) => void;
+export type RegisterErrorCallbackTypes = (statusCode: number) => void;
 
 export type TokenDataTypes = {
   sub: number;

@@ -74,6 +74,7 @@ export const Button = styled.button`
   border-radius: 0.3rem;
   background-color: transparent;
   transition: 150ms;
+  height: 2.25rem;
 
   &:hover,
   &:active {

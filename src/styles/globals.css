@@ -8,3 +8,18 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+.custom-loader {
+  margin: 0 auto;
+  width:6px;
+  height:6px;
+  background: #96B0A3;
+  border-radius: 50%;
+  box-shadow: 10px 0 #96B0A322,-10px 0 #96B0A3;
+  animation:d5 0.5s infinite linear alternate;
+}
+@keyframes d5 {
+    0% {box-shadow: 10px 0 #96B0A3,-10px 0 #96B0A322;background: #96B0A3}
+    33%{box-shadow: 10px 0 #96B0A3,-10px 0 #96B0A322;background: #96B0A322}
+    66%{box-shadow: 10px 0 #96B0A322,-10px 0 #96B0A3;background: #96B0A322}
+}

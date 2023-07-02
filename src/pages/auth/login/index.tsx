@@ -110,7 +110,9 @@ const Login: NextPage = () => {
           </LoginErrorSpan>
         )}
 
-        <Button type="submit">Entrar</Button>
+        <Button type="submit">
+          {auth.isLoading ? <div className="custom-loader"></div> : 'Entrar'}
+        </Button>
       </Form>
 
       <RegisterLink href="/auth/register">Criar conta</RegisterLink>
