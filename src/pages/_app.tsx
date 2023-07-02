@@ -7,6 +7,7 @@ import '@/styles/globals.css';
 import { theme } from '@/styles/theme';
 
 import { Poppins } from 'next/font/google';
+import { AuthProvider } from '@/context/AuthContext';
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -27,9 +28,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AuthProvider>
     </div>
   );
 }
