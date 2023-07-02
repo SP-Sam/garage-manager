@@ -17,7 +17,6 @@ import {
 
 const defaultValues: AuthValuesTypes = {
   isLoading: false,
-  isAuthenticated: false,
   tokenData: null,
   signIn: () => Promise.resolve(),
   signUp: () => Promise.resolve(),
@@ -54,6 +53,7 @@ const AuthProvider = ({ children }: Props) => {
   ) => {
     try {
       setIsLoading(true);
+
       const {
         data: { access_token },
       } = await api.post('auth/login', {
@@ -113,7 +113,7 @@ const AuthProvider = ({ children }: Props) => {
     }
   };
 
-  const values = { isLoading, isAuthenticated, tokenData, signIn, signUp };
+  const values = { isLoading, tokenData, signIn, signUp };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

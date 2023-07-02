@@ -21,7 +21,6 @@ export type TokenDataTypes = {
 
 export type AuthValuesTypes = {
   isLoading: boolean;
-  isAuthenticated: boolean;
   tokenData: TokenDataTypes | null;
   signIn: (
     data: LoginFormTypes,

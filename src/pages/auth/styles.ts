@@ -92,3 +92,9 @@ export const RegisterLink = styled(Link)`
     text-decoration: underline;
   }
 `;
+
+export const LoginErrorSpan = styled.span`
+  font-size: 0.8rem;
+  color: #ffa500;
+  margin-top: -0.4rem;
+`;
