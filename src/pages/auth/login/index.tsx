@@ -9,13 +9,13 @@ import {
   MainContainer,
   RegisterLink,
   GreetingText,
-} from './styles';
+} from '../styles';
 
 const Login: NextPage = () => {
   return (
     <MainContainer>
       <FlexContainer $justify="center">
-        <GreetingText>Olá, seja bem-vindo ao Garage Manager 🪛</GreetingText>
+        <GreetingText>Olá, seja bem-vindo(a) ao Garage Manager 🪛</GreetingText>
       </FlexContainer>
 
       <Form>

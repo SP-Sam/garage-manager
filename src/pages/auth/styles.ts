@@ -27,13 +27,15 @@ export const FlexContainer = styled.div<{
 `;
 
 export const GreetingText = styled.h1`
+  max-width: 20rem;
   font-size: 1rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.gray[100]};
-  max-width: 20rem;
+  padding: 0 2rem;
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
     font-size: 1.3rem;
+    padding: 0;
   }
 `;
 export const Form = styled.form`
@@ -59,7 +61,8 @@ export const Input = styled.input`
   background-color: transparent;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.black[100]};
+    color: ${({ theme }) => theme.colors.black[50]};
+    opacity: 0.65;
   }
 `;
 
