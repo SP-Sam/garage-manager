@@ -4,6 +4,8 @@ import { GetServerSideProps, NextPage } from 'next';
 import { Briefcase, UserCog, Users, Wrench } from 'lucide-react';
 import { parseCookies } from 'nookies';
 import { dashboardCards } from './dashboardCards';
+import Layout from '@/components/layout';
+import Head from 'next/head';
 
 const icons: { [key: string]: ReactNode } = {
   briefcase: <Briefcase />,
@@ -14,15 +16,20 @@ const icons: { [key: string]: ReactNode } = {
 
 const Dashboard: NextPage = () => {
   return (
-    <div>
-      {dashboardCards.map((card) => (
-        <div key={card.title}>
-          {icons[card.icon]}
-          <h3>{card.title}</h3>
-          <p>{card.description}</p>
-        </div>
-      ))}
-    </div>
+    <Layout>
+      <Head>
+        <title>Dashboard | Garage Manager</title>
+      </Head>
+    </Layout>
+    // <div>
+    //   {dashboardCards.map((card) => (
+    //     <div key={card.title}>
+    //       {icons[card.icon]}
+    //       <h3>{card.title}</h3>
+    //       <p>{card.description}</p>
+    //     </div>
+    //   ))}
+    // </div>
   );
 };
 
