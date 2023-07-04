@@ -1,17 +1,26 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { NavBarItemsWrapper, NavBarWrapper, PageTitle } from './styles';
 import { Menu, User2, X } from 'lucide-react';
+import { useRouter } from 'next/router';
 
-const NavBar: FC = () => {
+interface Props {
+  pageTitle: string;
+}
+
+const NavBar: FC<Props> = ({ pageTitle }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
 
   return (
     <NavBarWrapper>
-      <NavBarItemsWrapper onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X /> : <Menu />}
-      </NavBarItemsWrapper>
+      {router.pathname !== '/dashboard' && (
+        <NavBarItemsWrapper onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X /> : <Menu />}
+        </NavBarItemsWrapper>
+      )}
 
-      <PageTitle>{document.title.replace(' | Garage Manager', '')}</PageTitle>
+      <PageTitle>{pageTitle}</PageTitle>
 
       <NavBarItemsWrapper>
         <User2 />
