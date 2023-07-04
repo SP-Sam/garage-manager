@@ -31,3 +31,10 @@ export type AuthValuesTypes = {
     errorCallback?: RegisterErrorCallbackTypes
   ) => void;
 };
+
+export type DashboardCardTypes = {
+  title: string;
+  description: string;
+  icon: string;
+  toPage: string;
+};

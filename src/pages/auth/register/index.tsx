@@ -23,6 +23,7 @@ import {
   MainContainer,
   RegisterLink,
 } from '../styles';
+import Head from 'next/head';
 
 const REQUIRED_MESSAGE = 'Campo obrigatório';
 const NAME_LENGTH_MESSAGE = 'O nome deve ter pelo menos 4 caracteres';
@@ -74,6 +75,10 @@ const Register: NextPage = () => {
 
   return (
     <MainContainer>
+      <Head>
+        <title>SignUp | Garage Manager</title>
+      </Head>
+
       <FlexContainer $justify="center">
         <GreetingText>Crie sua conta no Garage Manager 🪛</GreetingText>
       </FlexContainer>

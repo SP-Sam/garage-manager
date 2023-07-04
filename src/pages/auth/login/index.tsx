@@ -25,6 +25,7 @@ import {
   GreetingText,
   LoginErrorSpan,
 } from '../styles';
+import Head from 'next/head';
 
 const REQUIRED_MESSAGE = 'Campo obrigatório';
 
@@ -59,6 +60,10 @@ const Login: NextPage = () => {
 
   return (
     <MainContainer>
+      <Head>
+        <title>Login | Garage Manager</title>
+      </Head>
+
       <FlexContainer $justify="center">
         <GreetingText>Olá, seja bem-vindo(a) ao Garage Manager 🪛</GreetingText>
       </FlexContainer>
