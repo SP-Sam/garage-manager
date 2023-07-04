@@ -4,12 +4,13 @@ import Footer from '../Footer/Footer';
 
 interface Props {
   children: ReactNode;
+  pageTitle: string;
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children, pageTitle }) => {
   return (
     <>
-      <NavBar />
+      <NavBar pageTitle={pageTitle} />
       {children}
       <Footer />
     </>

@@ -36,4 +36,5 @@ export type DashboardCardTypes = {
   title: string;
   description: string;
   icon: string;
+  toPage: string;
 };

@@ -11,7 +11,7 @@ export const FooterWrapper = styled.footer`
 
 export const FooterText = styled.p`
   font-size: 0.8rem;
-  color: ${({ theme }) => theme.colors.black[800]};
+  color: ${({ theme }) => theme.colors.platinum[700]};
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
     font-size: 1rem;
@@ -20,7 +20,7 @@ export const FooterText = styled.p`
 
 export const FooterLink = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.black[800]};
+  color: ${({ theme }) => theme.colors.platinum[700]};
   font-weight: bold;
 
   &:hover {
