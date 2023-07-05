@@ -38,3 +38,9 @@ export type DashboardCardTypes = {
   icon: string;
   toPage: string;
 };
+
+export type CarPartCardTypes = {
+  id: number;
+  name: string;
+  price: number;
+};

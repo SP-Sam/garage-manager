@@ -10,6 +10,7 @@ const Services: NextPage = () => {
       <Head>
         <title>Serviços | Garage Manager</title>
       </Head>
+
       <h1>Em desenvolvimento</h1>
     </Layout>
   );
