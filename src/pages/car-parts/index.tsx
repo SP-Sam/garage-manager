@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/store';
 import { useEffect } from 'react';
 import { fetchCarParts } from '@/store/carParts';
+import TableToolsBar from '@/components/TableToolsBar';
 
 const CarParts: NextPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -27,6 +28,7 @@ const CarParts: NextPage = () => {
       </Head>
 
       <CarPartsContainer>
+        <TableToolsBar />
         {carParts.length === 0 ? (
           <NoPartsText>Não há peças cadastradas ainda</NoPartsText>
         ) : (

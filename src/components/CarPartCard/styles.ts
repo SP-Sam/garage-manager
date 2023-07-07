@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PartCard = styled.div`
   min-height: 3.75rem;
-  width: 95%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

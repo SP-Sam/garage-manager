@@ -22,11 +22,11 @@ export const CarPartListContainer = styled.section`
   align-items: center;
   gap: 0.8rem;
   max-width: 64rem;
-  width: 95%;
+  width: 90%;
   height: calc(100vh - 20rem);
   margin-top: 1rem;
   overflow-y: scroll;
-  padding-bottom: 1rem;
+  padding: 0 0.5rem 1rem 0;
 `;
 
 export const NoPartsText = styled.h2`
