@@ -44,3 +44,7 @@ export type CarPartCardTypes = {
   name: string;
   price: number;
 };
+
+export type CarPartsStoreTypes = {
+  data: CarPartCardTypes[];
+};
