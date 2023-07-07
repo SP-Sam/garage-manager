@@ -32,6 +32,7 @@ export const CarPartListContainer = styled.section`
 export const NoPartsText = styled.h2`
   color: ${({ theme }) => theme.colors.platinum[100]};
   font-size: 1.1rem;
-  width: 90%;
-  margin-top: 1rem;
+  max-width: 64rem;
+  margin-top: 2rem;
+  text-align: center;
 `;

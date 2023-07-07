@@ -27,17 +27,20 @@ const CarParts: NextPage = () => {
       </Head>
 
       <CarPartsContainer>
-        <NoPartsText>Não há peças cadastradas ainda</NoPartsText>
-        <CarPartListContainer>
-          {carParts.map((carPart) => (
-            <CarPartCard
-              key={carPart.id}
-              id={carPart.id}
-              name={carPart.name}
-              price={carPart.price}
-            />
-          ))}
-        </CarPartListContainer>
+        {carParts.length === 0 ? (
+          <NoPartsText>Não há peças cadastradas ainda</NoPartsText>
+        ) : (
+          <CarPartListContainer>
+            {carParts.map((carPart) => (
+              <CarPartCard
+                key={carPart.id}
+                id={carPart.id}
+                name={carPart.name}
+                price={carPart.price}
+              />
+            ))}
+          </CarPartListContainer>
+        )}
       </CarPartsContainer>
     </Layout>
   );
