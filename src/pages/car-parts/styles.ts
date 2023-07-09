@@ -35,4 +35,5 @@ export const NoPartsText = styled.h2`
   max-width: 64rem;
   margin-top: 2rem;
   text-align: center;
+  padding: 0 1rem;
 `;
