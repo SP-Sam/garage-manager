@@ -61,6 +61,14 @@ export const MenuItemsContainer = styled.ul`
     top: 4.5rem;
     left: 2rem;
   }
+
+  &.profile {
+    left: calc(100vw - 14.75rem);
+
+    @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
+      left: calc(100vw - 15.75rem);
+    }
+  }
 `;
 
 export const MenuListItem = styled.li`

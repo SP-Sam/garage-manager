@@ -2,6 +2,18 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import autoAnimate from '@formkit/auto-animate';
+import {
+  Briefcase,
+  Home,
+  LogOut,
+  Menu,
+  User,
+  User2,
+  UserCog,
+  Users,
+  Wrench,
+  X,
+} from 'lucide-react';
 
 import {
   MenuItemLink,
@@ -12,23 +24,13 @@ import {
   PageTitle,
 } from './styles';
 
-import {
-  Briefcase,
-  Home,
-  Menu,
-  User2,
-  UserCog,
-  Users,
-  Wrench,
-  X,
-} from 'lucide-react';
-
 interface Props {
   pageTitle: string;
 }
 
 const NavBar: FC<Props> = ({ pageTitle }) => {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const parent = useRef(null);
   let menuRef = useRef<any>();
 
@@ -42,10 +44,11 @@ const NavBar: FC<Props> = ({ pageTitle }) => {
     let handler = (e: MouseEvent) => {
       if (!menuRef.current?.contains(e.target)) {
         setIsNavMenuOpen(false);
+        setIsProfileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handler);
+    document.addEventListener('mouseup', handler);
   });
 
   return (
@@ -55,7 +58,6 @@ const NavBar: FC<Props> = ({ pageTitle }) => {
           <NavBarToggle
             onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
             className={isNavMenuOpen ? 'active' : ''}
-            ref={menuRef}
           >
             {isNavMenuOpen ? <X /> : <Menu />}
           </NavBarToggle>
@@ -115,9 +117,33 @@ const NavBar: FC<Props> = ({ pageTitle }) => {
 
       <PageTitle>{pageTitle}</PageTitle>
 
-      <NavBarToggle>
+      <NavBarToggle
+        onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
+        className={isProfileMenuOpen ? 'active' : ''}
+      >
         <User2 />
       </NavBarToggle>
+
+      {isProfileMenuOpen && (
+        <MenuItemsContainer className="profile" ref={menuRef}>
+          <MenuListItem>
+            <MenuItemLink
+              href="/profile"
+              className={router.pathname === '/profile' ? 'active' : ''}
+            >
+              <User />
+              Minha conta
+            </MenuItemLink>
+          </MenuListItem>
+
+          <MenuListItem>
+            <MenuItemLink href="/auth/login">
+              <LogOut />
+              Sair
+            </MenuItemLink>
+          </MenuListItem>
+        </MenuItemsContainer>
+      )}
     </NavBarWrapper>
   );
 };
