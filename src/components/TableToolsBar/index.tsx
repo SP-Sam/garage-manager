@@ -1,8 +1,12 @@
 import { FC } from 'react';
 import {
   AddButtonContainer,
-  AddButtonWrapper,
+  CustomSelect,
+  SearchButton,
+  SearchForm,
+  SearchInput,
   SearchWrapper,
+  SelectLabel,
   TableToolsContainer,
 } from './styles';
 import { Plus } from 'lucide-react';
@@ -10,22 +14,26 @@ import { Plus } from 'lucide-react';
 const TableToolsBar: FC = () => {
   return (
     <TableToolsContainer>
-      <SearchWrapper>
-        <form>
-          <select>
-            <option value="name">nome</option>
-            <option value="id">id</option>
-          </select>
+      <SearchForm>
+        <SearchWrapper>
+          <SelectLabel htmlFor="search-type">
+            Buscar por:{' '}
+            <CustomSelect id="search-type">
+              <option value="name">Nome</option>
+              <option value="id">ID</option>
+            </CustomSelect>
+          </SelectLabel>
 
-          <input type="text" />
-        </form>
-      </SearchWrapper>
+          <SearchInput type="text" placeholder="Nome ou ID da peça" />
+        </SearchWrapper>
 
-      <AddButtonWrapper>
-        <AddButtonContainer>
-          <Plus />
-        </AddButtonContainer>
-      </AddButtonWrapper>
+        <SearchButton>Buscar</SearchButton>
+      </SearchForm>
+
+      <AddButtonContainer>
+        <Plus />
+        Cadastrar peça
+      </AddButtonContainer>
     </TableToolsContainer>
   );
 };
