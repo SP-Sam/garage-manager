@@ -37,7 +37,7 @@ const CarParts: NextPage = () => {
       <CarPartsContainer ref={parent}>
         <TableToolsBar />
         {carParts.length === 0 ? (
-          <NoPartsText>Não há peças cadastradas ainda</NoPartsText>
+          <NoPartsText>Não há peças cadastradas</NoPartsText>
         ) : (
           <CarPartListContainer>
             {carParts.map((carPart) => (

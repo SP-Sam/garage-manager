@@ -48,3 +48,8 @@ export type CarPartCardTypes = {
 export type CarPartsStoreTypes = {
   data: CarPartCardTypes[];
 };
+
+export type SearchFormTypes = {
+  type: string;
+  searchTerm: string;
+};

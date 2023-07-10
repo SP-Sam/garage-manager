@@ -50,7 +50,13 @@ input[type='number'] {
 
 /* Track */
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: #cfd1d02a;
+}
+
+@media screen and (min-width: 768px) {
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }
 
 /* Handle */

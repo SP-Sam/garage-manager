@@ -6,12 +6,13 @@ export const TableToolsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: 1rem;
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 2rem;
   }
 `;
 
@@ -50,7 +51,11 @@ export const SelectLabel = styled.label`
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  min-width: 12.5rem;
+  width: 100%;
+
+  @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
+    max-width: 5rem;
+  }
 `;
 
 export const CustomSelect = styled.select`
@@ -104,7 +109,7 @@ export const SearchInput = styled.input`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
-    max-width: 12.5rem;
+    /* min-width: 12.5rem; */
     height: 2rem;
   }
 `;
@@ -125,8 +130,30 @@ export const SearchButton = styled.button`
   }
 `;
 
+export const ResetButton = styled.button`
+  border: 1px solid ${({ theme }) => theme.colors.platinum[200]};
+  color: ${({ theme }) => theme.colors.platinum[50]};
+  background-color: ${({ theme }) => theme.colors.platinum[700]};
+  border-radius: 0.3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.8rem;
+  height: 2rem;
+  width: 3.25rem;
+  transition: 150ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.alabaster[600]};
+  }
+`;
+
 // ** Add Button
 export const AddButtonContainer = styled.div`
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;

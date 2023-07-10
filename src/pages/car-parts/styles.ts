@@ -23,13 +23,13 @@ export const CarPartListContainer = styled.section`
   gap: 0.8rem;
   max-width: 64rem;
   width: 90%;
-  height: calc(100vh - 22rem);
+  height: calc(100vh - 24rem);
   margin-top: 1rem;
   overflow-y: scroll;
   padding: 0 0.5rem 1rem 0;
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
-    height: calc(100vh - 16rem);
+    height: calc(100vh - 15rem);
   }
 `;
 

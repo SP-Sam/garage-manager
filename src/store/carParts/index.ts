@@ -10,7 +10,8 @@ interface Redux {
 interface DataParams {
   page?: number;
   perPage?: number;
-  searchParams?: string;
+  searchTerm?: string;
+  type?: string;
 }
 
 const initialState: CarPartsStoreTypes = {
@@ -21,6 +22,19 @@ export const fetchCarParts = createAsyncThunk(
   'carParts/fetchCarParts',
   async ({ page = 1, perPage = 10 }: DataParams) => {
     const { data } = await api.get('/car-parts', { params: { page, perPage } });
+
+    return data;
+  }
+);
+
+export const searchCarParts = createAsyncThunk(
+  'carParts/searchCarParts',
+  async ({ searchTerm, type }: DataParams) => {
+    console.log({ searchTerm, type });
+
+    const { data } = await api.get('/car-parts/search', {
+      params: { type, q: searchTerm },
+    });
 
     return data;
   }
@@ -41,6 +55,10 @@ export const carPartsSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchCarParts.fulfilled, (state, action) => {
+      state.data = action.payload;
+    });
+
+    builder.addCase(searchCarParts.fulfilled, (state, action) => {
       state.data = action.payload;
     });
   },
