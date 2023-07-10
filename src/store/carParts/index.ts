@@ -1,7 +1,12 @@
+import { Dispatch, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { api } from '@/services/api';
-import { CarPartsStoreTypes } from '@/types';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+import { CarPartsStoreTypes } from '@/types';
+
+interface Redux {
+  getState?: any;
+  dispatch: Dispatch<any>;
+}
 interface DataParams {
   page?: number;
   perPage?: number;
@@ -18,6 +23,15 @@ export const fetchCarParts = createAsyncThunk(
     const { data } = await api.get('/car-parts', { params: { page, perPage } });
 
     return data;
+  }
+);
+
+export const deleteCarPart = createAsyncThunk(
+  'carParts/deleteCarPart',
+  async (carPartId: number, { dispatch }: Redux) => {
+    await api.delete(`/car-parts/${carPartId}`);
+
+    dispatch(fetchCarParts({}));
   }
 );
 

@@ -12,6 +12,7 @@ export const PartCard = styled.div`
   padding: 0 0.5rem;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
   gap: 1rem;
+  position: relative;
 
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
     font-size: 1rem;
@@ -90,6 +91,11 @@ export const ActionsWrapper = styled.div`
     cursor: pointer;
   }
 
+  &.active {
+    background-color: ${({ theme }) => theme.colors.platinum[600]};
+    color: ${({ theme }) => theme.colors.platinum[50]};
+  }
+
   @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
     width: 2.3rem;
     max-width: 2.3rem;
@@ -98,6 +104,51 @@ export const ActionsWrapper = styled.div`
     svg {
       width: 1.375rem;
       height: 1.375rem;
+    }
+  }
+`;
+
+export const ActionList = styled.div`
+  position: absolute;
+  z-index: 999;
+  background-color: ${({ theme }) => theme.colors.platinum[100]};
+  top: 1rem;
+  right: 2.5rem;
+  border: 1px solid ${({ theme }) => theme.colors.alabaster[700]};
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: ${({ theme }) => theme.screens.tablet}) {
+    right: 3rem;
+  }
+`;
+
+export const ActionItem = styled.button`
+  border: none;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.platinum[600]};
+  transition: 150ms;
+  padding: 0.35rem;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.platinum[50]};
+    background-color: ${({ theme }) => theme.colors.platinum[400]};
+    cursor: pointer;
+  }
+
+  &.delete {
+    color: #ff0000;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.platinum[50]};
     }
   }
 `;
