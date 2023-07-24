@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 

@@ -38,3 +38,18 @@ export type DashboardCardTypes = {
   icon: string;
   toPage: string;
 };
+
+export type CarPartCardTypes = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+export type CarPartsStoreTypes = {
+  data: CarPartCardTypes[];
+};
+
+export type SearchFormTypes = {
+  type: string;
+  searchTerm: string;
+};

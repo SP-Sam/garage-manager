@@ -13,9 +13,9 @@ import {
 
 const icons: { [key: string]: ReactNode } = {
   briefcase: <Briefcase />,
+  wrench: <Wrench />,
   users: <Users />,
   'user-cog': <UserCog />,
-  wrench: <Wrench />,
 };
 
 const DashboardCard: FC<DashboardCardTypes> = ({

@@ -7,7 +7,10 @@ import '@/styles/globals.css';
 import { theme } from '@/styles/theme';
 
 import { Poppins } from 'next/font/google';
+
 import { AuthProvider } from '@/context/AuthContext';
+import { Provider } from 'react-redux';
+import { store } from '@/store';
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -29,9 +32,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <AuthProvider>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </Provider>
       </AuthProvider>
     </div>
   );

@@ -41,3 +41,31 @@ input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
+/* width */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 7px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #cfd1d02a;
+}
+
+@media screen and (min-width: 768px) {
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #96b0a3;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #6d8177;
+}
